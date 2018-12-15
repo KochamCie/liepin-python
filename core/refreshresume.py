@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import schedule
 import requests
 import login
@@ -13,7 +14,7 @@ params = {
 def job():
     print("I'm working...")
     cookies = login.login()
-    print(cookies)
+    print cookies
     new_headers = {
         'X-Requested-With': 'XMLHttpRequest',
         'Cookie': cookies
@@ -22,7 +23,7 @@ def job():
         r = requests.post(settings.refresh_api, data=params, headers=new_headers)
         print(r.text)
     except IOError:
-        print('error')
+        print 'error'
 
 
 schedule.every(1).seconds.do(job)

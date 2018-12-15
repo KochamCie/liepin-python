@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import requests
 import hashlib
 import time
@@ -36,7 +37,7 @@ def before():
 def login():
     global cookie_str
     if before():
-        print('重新登陆======》》》', params)
+        print '重新登陆======》》', params
         r = requests.post(settings.login_api, params=params, headers=headers)
         cookies = r.cookies.get_dict()
         print(cookies)
