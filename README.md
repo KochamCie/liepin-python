@@ -1,4 +1,5 @@
-# liepin
+## liepin
+### 配置个人信息，运行脚本
 auto refresh your resume
 
 settings.py中以下是需要调整的个人配置项
@@ -17,3 +18,16 @@ relogin_interval = 1800
 **运行refreshresume.py**，如果你的python版本是2.*，请使用分之python2。
 
 
+### 配置脚本后台运行
+编写启动shell脚本，cd指令后面为脚本所在目录
+```bash
+vim liepin.sh
+#!/bin/bash
+cd /app/py/liepin/core
+pwd
+python refreshresume.py
+```
+在目录下使用命令
+```commandline
+nohup ./liepin.sh & 
+```
